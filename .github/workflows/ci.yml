@@ -1,0 +1,16 @@
+name: CI
+on:
+push:
+branches: [ main, develop ]
+pull_request:
+branches: [ main, develop ]
+
+
+jobs:
+build:
+runs-on: ubuntu-latest
+steps:
+- uses: actions/checkout@v4
+- name: Verify HTML structure (basic)
+run: |
+echo "HTML verificado (placeholder). Adicione validadores conforme necessário."

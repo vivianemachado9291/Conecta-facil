@@ -1,0 +1,77 @@
+:root {
+--bg: #ffffff;
+--text: #111111;
+--brand: #0b5fff;
+--muted: #5b6470;
+--card: #f5f7fb;
+--focus: #ffab00;
+--border: #d9dfeb;
+--font-size: 1rem; /* base 16px */
+}
+
+
+/* Preferência do usuário (dark) */
+@media (prefers-color-scheme: dark) {
+:root { --bg:#0e1116; --text:#f2f5f9; --card:#171b22; --border:#2a3140; }
+}
+
+
+/* Estado: modo escuro explícito */
+:root.theme-dark { --bg:#0e1116; --text:#f2f5f9; --card:#171b22; --border:#2a3140; }
+
+
+/* Estado: alto contraste */
+:root.theme-contrast { --bg:#000; --text:#fff; --brand:#00ffff; --card:#000; --border:#fff; --focus:#ff0; }
+
+
+html { font-size: 100%; }
+body {
+margin: 0;
+font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+background: var(--bg);
+color: var(--text);
+line-height: 1.6;
+font-size: var(--font-size);
+}
+
+
+.container { width: min(1100px, 92%); margin: 0 auto; }
+
+
+.skip-link {
+position: absolute; left: -999px; top: 0; background: var(--brand); color: #fff; padding: .5rem 1rem; z-index: 1000;
+}
+.skip-link:focus { left: 1rem; top: 1rem; outline: 3px solid var(--focus); }
+
+
+.site-header { border-bottom: 1px solid var(--border); }
+.site-header .container { display: flex; align-items: center; gap: 1rem; justify-content: space-between; padding: .75rem 0; }
+.brand { margin: 0; font-size: 1.25rem; }
+.site-nav ul { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0; }
+.site-nav a { color: var(--text); text-decoration: none; }
+.site-nav a:focus, .site-nav a:hover { text-decoration: underline; }
+
+
+.toggles button { margin-left: .5rem; }
+
+
+.hero { padding: 3rem 0 2rem; }
+.btn-primary, .btn-secondary, button {
+background: var(--brand); color: #fff; border: none; padding: .6rem 1rem; border-radius: .5rem; cursor: pointer;
+}
+.btn-secondary { background: transparent; color: var(--brand); border: 2px solid var(--brand); }
+
+
+.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
+.card { background: var(--card); border: 1px solid var(--border); padding: 1rem; border-radius: .75rem; }
+
+
+.form-group { margin-bottom: 1rem; }
+input, textarea { width: 100%; padding: .6rem .75rem; border: 1px solid var(--border); border-radius: .5rem; background: transparent; color: var(--text); }
+.field-error { color: #c62828; min-height: 1.25rem; margin-top: .25rem; }
+
+
+.site-footer { border-top: 1px solid var(--border); padding: 1.5rem 0; margin-top: 2rem; }
+
+
+}

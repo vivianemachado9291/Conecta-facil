@@ -1,35 +1,77 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Conecta Fácil — Inclusão Digital</title>
-  <meta name="description" content="Tutoriais simples e acessíveis para inclusão digital de pessoas idosas." />
-  <meta name="theme-color" content="#0b5fff" />
+  <meta name="description" content="Tutoriais simples e acessíveis para inclusão digital de pessoas idosas.">
+  <meta name="theme-color" content="#0b5fff">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Conecta Fácil — Inclusão Digital" />
-  <meta property="og:description" content="Tutoriais simples e acessíveis para inclusão digital." />
-  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Conecta Fácil — Inclusão Digital">
+  <meta property="og:description" content="Tutoriais simples e acessíveis para inclusão digital.">
+  <meta property="og:type" content="website">
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/img/favicon.ico" />
+  <link rel="icon" href="../public/favicon.ico">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
+  <!-- Estilos -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-  <!-- Logo -->
-  <header style="text-align:center; padding: 20px;">
-    <img src="assets/img/logo.png" alt="Logo Conecta Fácil" style="max-width:180px; height:auto;">
+
+  <!-- 🔹 Header com logo e menu -->
+  <header>
+    <div class="header-left">
+      <img src="assets/img/logo.png" alt="Logo Conecta Fácil" class="logo">
+      <h1>Conecta Fácil</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#objetivos">Objetivos</a></li>
+        <li><a href="#tutoriais">Tutoriais</a></li>
+        <li><a href="#contato">Contato</a></li>
+      </ul>
+    </nav>
   </header>
 
-  <!-- Conteúdo -->
+  <!-- 🔹 Conteúdo principal -->
   <main>
-    <h1>Conecta Fácil — Inclusão Digital</h1>
-    <p>Tutoriais acessíveis para apoiar pessoas idosas (e iniciantes) a usar serviços digitais do dia a dia.</p>
+    <section id="inicio">
+      <h2>Conecta Fácil — Inclusão Digital</h2>
+      <p>Tutoriais acessíveis para apoiar pessoas idosas (e iniciantes) a usar serviços digitais do dia a dia.</p>
+    </section>
 
-    <!-- Aqui segue o resto do conteúdo que você já tem -->
-  </main>
-</body>
-</html>
+    <section id="objetivos">
+      <h2>🎯 Objetivos</h2>
+      <ul>
+        <li>Inclusão digital com linguagem simples</li>
+        <li>Acessibilidade nível WCAG 2.1 AA</li>
+        <li>Deploy em produção com HTTPS</li>
+      </ul>
+    </section>
+
+    <section id="tutoriais">
+      <h2>📚 Tutoriais</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Enviar mensagem no WhatsApp</h3>
+          <p>Aprenda a abrir o app, escolher um contato e enviar texto, áudio e imagens.</p>
+          <a href="#">Passo a passo</a><br>
+          <a href="#">📥 Baixar guia em PDF</a>
+        </article>
+
+        <article class="card">
+          <h3>Criar conta no gov.br</h3>
+          <p>Veja como criar e validar sua conta para acessar serviços públicos digitais.</p>
+          <a href="#">Passo a passo</a><br>
+          <a href="#">📥 Baixar guia em PDF</a>
+        </article>
+
+        <article class="card">
+          <h3>Agendar consulta online</h3>
+          <p>Como localizar unidade de saúde e realizar agendamentos pelo aplicativo.</p>
+          <a href="#">Passo a passo</a><br>
+          <a href="#">📥 Baixar guia em PDF</a>
+        </article>
+      </div>

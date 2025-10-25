@@ -1,3 +1,5 @@
+![CI (A11y) & Deploy](https://github.com/vivianemachado9291/Conecta-facil/actions/workflows/deploy.yml/badge.svg)
+
 # Conecta Fácil — Inclusão Digital
 
 

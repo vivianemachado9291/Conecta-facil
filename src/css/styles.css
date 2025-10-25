@@ -99,3 +99,15 @@ input, textarea {
 .download-link:focus {
   background-color: #003f7d;
 }
+/* Ajusta o tamanho/estilo dos botões "Baixar guia" nos cards de Tutoriais */
+#tutoriais .card .btn-secondary {
+  font-size: 0.85rem;      /* menor */
+  padding: 6px 10px;       /* compacto */
+  line-height: 1.2;
+  border-width: 1px;       /* borda mais fina */
+}
+
+/* (opcional) aproxima do texto acima */
+#tutoriais .card details {
+  margin-bottom: .5rem;
+}

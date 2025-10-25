@@ -1,4 +1,6 @@
 ![CI (A11y) & Deploy](https://github.com/vivianemachado9291/Conecta-facil/actions/workflows/deploy.yml/badge.svg)
+![WCAG](https://img.shields.io/badge/Acessibilidade-WCAG%202.1%20AA-blue)
+![Deploy](https://img.shields.io/badge/Deploy-GitHub%20Pages-success)
 
 # Conecta Fácil — Inclusão Digital
 

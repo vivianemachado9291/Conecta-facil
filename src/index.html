@@ -1,60 +1,151 @@
 <!DOCTYPE html>
-<article class="card" aria-labelledby="card-consulta-titulo">
-<h3 id="card-consulta-titulo">Agendar consulta online</h3>
-<p>Como localizar unidade de saúde e realizar agendamentos pelo aplicativo.</p>
-<details>
-<summary>Passo a passo</summary>
-<ol>
-<li>Abra o aplicativo de saúde do seu município.</li>
-<li>Procure a opção “Agendamentos”.</li>
-<li>Selecione especialidade, data e horário.</li>
-</ol>
-</details>
-<a class="btn-secondary" href="#">Baixar guia em PDF<span class="sr-only"> de agendamento</span></a>
-</article>
-</div>
-</div>
-</section>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Conecta Fácil — Inclusão Digital</title>
+  <meta name="description" content="Tutoriais simples e acessíveis para inclusão digital de pessoas idosas." />
+  <meta name="theme-color" content="#0b5fff" />
 
+  <!-- Open Graph -->
+  <meta property="og:title" content="Conecta Fácil — Inclusão Digital" />
+  <meta property="og:description" content="Tutoriais simples e acessíveis para inclusão digital." />
+  <meta property="og:type" content="website" />
 
-<section id="contato" aria-labelledby="titulo-contato">
-<div class="container">
-<h2 id="titulo-contato">Contato e sugestões</h2>
-<form aria-describedby="ajuda-contato" novalidate>
-<p id="ajuda-contato">Campos marcados com * são obrigatórios.</p>
-<div class="form-group">
-<label for="nome">Nome *</label>
-<input id="nome" name="nome" type="text" required aria-required="true" />
-</div>
-<div class="form-group">
-<label for="email">Email *</label>
-<input id="email" name="email" type="email" required aria-required="true" aria-describedby="email-erro" />
-<div id="email-erro" class="field-error" role="alert" aria-live="polite"></div>
-</div>
-<div class="form-group">
-<label for="mensagem">Mensagem</label>
-<textarea id="mensagem" name="mensagem" rows="4"></textarea>
-</div>
-<button class="btn-primary" type="submit">Enviar</button>
-</form>
-</div>
-</section>
-</main>
+  <!-- Favicon (opcional) -->
+  <link rel="icon" href="../public/favicon.ico" />
 
+  <link rel="stylesheet" href="./css/styles.css" />
+</head>
+<body>
+  <!-- Skip link -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-<footer class="site-footer" role="contentinfo">
-<div class="container">
-<p>© <span id="ano"></span> Conecta Fácil — Projeto de Inclusão Digital.</p>
-<nav aria-label="Links de utilidade">
-<ul>
-<li><a href="#">Política de Privacidade</a></li>
-<li><a href="#">Acessibilidade</a></li>
-</ul>
-</nav>
-</div>
-</footer>
+  <header class="site-header" role="banner">
+    <div class="container">
+      <h1 class="brand">Conecta Fácil</h1>
 
+      <nav class="site-nav" role="navigation" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#tutoriais">Tutoriais</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
 
-<script src="./js/script.js"></script>
+      <div class="toggles" role="group" aria-label="Preferências de exibição">
+        <button id="btn-dark" type="button" aria-pressed="false">Modo escuro</button>
+        <button id="btn-contrast" type="button" aria-pressed="false">Alto contraste</button>
+        <button id="btn-font" type="button" aria-pressed="false" aria-describedby="ajuda-fonte">A+</button>
+        <span id="ajuda-fonte" class="sr-only">Aumenta o tamanho da fonte para melhor leitura</span>
+      </div>
+    </div>
+  </header>
+
+  <main id="conteudo" tabindex="-1">
+    <section id="inicio" class="hero" aria-labelledby="titulo-inicio">
+      <div class="container">
+        <h2 id="titulo-inicio">Inclusão digital na prática</h2>
+        <p>Passo a passo simples para usar WhatsApp, acessar o gov.br, marcar consultas e muito mais.</p>
+        <a class="btn-primary" href="#tutoriais">Ver tutoriais</a>
+      </div>
+    </section>
+
+    <section id="tutoriais" aria-labelledby="titulo-tutoriais">
+      <div class="container">
+        <h2 id="titulo-tutoriais">Tutoriais</h2>
+
+        <div class="grid">
+          <!-- Card 1 -->
+          <article class="card" aria-labelledby="card-whats-titulo">
+            <h3 id="card-whats-titulo">Enviar mensagem no WhatsApp</h3>
+            <p>Aprenda a abrir o app, escolher um contato e enviar texto, áudio e imagens.</p>
+            <details>
+              <summary>Passo a passo</summary>
+              <ol>
+                <li>Abrir o WhatsApp.</li>
+                <li>Tocar no ícone de conversa.</li>
+                <li>Escolher o contato da lista.</li>
+                <li>Escrever a mensagem e tocar em enviar.</li>
+              </ol>
+            </details>
+            <a class="btn-secondary" href="#">Baixar guia em PDF<span class="sr-only"> do WhatsApp</span></a>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="card" aria-labelledby="card-govbr-titulo">
+            <h3 id="card-govbr-titulo">Criar conta no gov.br</h3>
+            <p>Veja como criar e validar sua conta para acessar serviços públicos digitais.</p>
+            <details>
+              <summary>Passo a passo</summary>
+              <ol>
+                <li>Acesse <strong>gov.br</strong> e clique em “Entrar”.</li>
+                <li>Selecione “Criar conta”.</li>
+                <li>Informe CPF e siga as instruções de validação.</li>
+              </ol>
+            </details>
+            <a class="btn-secondary" href="#">Baixar guia em PDF<span class="sr-only"> do gov.br</span></a>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="card" aria-labelledby="card-consulta-titulo">
+            <h3 id="card-consulta-titulo">Agendar consulta online</h3>
+            <p>Como localizar unidade de saúde e realizar agendamentos pelo aplicativo.</p>
+            <details>
+              <summary>Passo a passo</summary>
+              <ol>
+                <li>Abra o aplicativo de saúde do seu município.</li>
+                <li>Procure a opção “Agendamentos”.</li>
+                <li>Selecione especialidade, data e horário.</li>
+              </ol>
+            </details>
+            <a class="btn-secondary" href="#">Baixar guia em PDF<span class="sr-only"> de agendamento</span></a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="contato" aria-labelledby="titulo-contato">
+      <div class="container">
+        <h2 id="titulo-contato">Contato e sugestões</h2>
+
+        <form aria-describedby="ajuda-contato" novalidate>
+          <p id="ajuda-contato">Campos marcados com * são obrigatórios.</p>
+
+          <div class="form-group">
+            <label for="nome">Nome *</label>
+            <input id="nome" name="nome" type="text" required aria-required="true" />
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required aria-required="true" aria-describedby="email-erro" />
+            <div id="email-erro" class="field-error" role="alert" aria-live="polite"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+          </div>
+
+          <button class="btn-primary" type="submit">Enviar</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container">
+      <p>© <span id="ano"></span> Conecta Fácil — Projeto de Inclusão Digital.</p>
+      <nav aria-label="Links de utilidade">
+        <ul>
+          <li><a href="#">Política de Privacidade</a></li>
+          <li><a href="#">Acessibilidade</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="./js/script.js"></script>
 </body>
 </html>

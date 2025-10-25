@@ -1,113 +1,72 @@
-:root {
-  --bg: #ffffff;
-  --text: #111111;
-  --brand: #0b5fff;
-  --muted: #5b6470;
-  --card: #f5f7fb;
-  --focus: #ffab00;
-  --border: #d9dfeb;
-  --font-size: 1rem; /* 16px */
-}
-
-/* Dark conforme preferência do SO */
-@media (prefers-color-scheme: dark) {
-  :root { --bg:#0e1116; --text:#f2f5f9; --card:#171b22; --border:#2a3140; }
-}
-
-/* Forçar dark via toggle */
-:root.theme-dark { --bg:#0e1116; --text:#f2f5f9; --card:#171b22; --border:#2a3140; }
-
-/* Alto contraste via toggle */
-:root.theme-contrast { --bg:#000; --text:#fff; --brand:#00ffff; --card:#000; --border:#fff; --focus:#ff0; }
-
-html { font-size: 100%; }
-body {
+/* Reset básico */
+body, h1, h2, h3, p, ul, li, a {
   margin: 0;
-  font-family: system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, "Helvetica Neue", Arial, "Noto Sans";
-  background: var(--bg);
-  color: var(--text);
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Fonte geral */
+body {
+  font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  font-size: var(--font-size);
+  background: #f9f9f9;
+  color: #333;
 }
 
-.container { width: min(1100px, 92%); margin: 0 auto; }
-
-/* Skip link */
-.skip-link {
-  position: absolute; left: -999px; top: 0;
-  background: var(--brand); color: #fff; padding: .5rem 1rem; z-index: 1000;
-}
-.skip-link:focus { left: 1rem; top: 1rem; outline: 3px solid var(--focus); }
-
-/* Header/Nav */
-.site-header { border-bottom: 1px solid var(--border); }
-.site-header .container { display: flex; align-items: center; gap: 1rem; justify-content: space-between; padding: .75rem 0; }
-.brand { margin: 0; font-size: 1.25rem; }
-.site-nav ul { display: flex; gap: 1rem; list-style: none; margin: 0; padding: 0; }
-.site-nav a { color: var(--text); text-decoration: none; }
-.site-nav a:focus, .site-nav a:hover { text-decoration: underline; }
-.toggles button { margin-left: .5rem; }
-
-/* Botões */
-.btn-primary, .btn-secondary, button {
-  background: var(--brand); color: #fff; border: none; padding: .6rem 1rem; border-radius: .5rem; cursor: pointer;
-}
-.btn-secondary { background: transparent; color: var(--brand); border: 2px solid var(--brand); }
-
-/* Hero */
-.hero { padding: 3rem 0 2rem; }
-
-/* Grid/cards */
-.grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1rem; }
-.card { background: var(--card); border: 1px solid var(--border); padding: 1rem; border-radius: .75rem; }
-
-/* Formulário */
-.form-group { margin-bottom: 1rem; }
-input, textarea {
-  width: 100%; padding: .6rem .75rem; border: 1px solid var(--border); border-radius: .5rem;
-  background: transparent; color: var(--text);
-}
-.field-error { color: #c62828; min-height: 1.25rem; margin-top: .25rem; }
-
-/* Footer */
-.site-footer { border-top: 1px solid var(--border); padding: 1.5rem 0; margin-top: 2rem; }
-
-/* Foco visível */
-:focus { outline: 3px solid var(--focus); outline-offset: 2px; }
-
-/* Estado pressed para botões de preferência */
-[aria-pressed="true"] { box-shadow: 0 0 0 3px var(--focus) inset; }
-
-/* Responsivo */
-@media (min-width: 768px) {
-  .brand { font-size: 1.5rem; }
-}
-/* Estilo para links de download em PDF */
-.download-link {
-  display: inline-block;
-  margin-top: 8px;
-  padding: 6px 10px;
-  font-size: 0.8rem;
+/* ===== HEADER ===== */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 15px 30px;
+  background-color: #0b5fff; /* Azul do seu tema */
   color: #fff;
-  background-color: #005bbb;
-  border-radius: 4px;
+}
+
+header img {
+  height: 60px; /* tamanho do logo */
+  width: auto;
+}
+
+header h1 {
+  font-size: 1.8rem;
+  margin-left: 10px;
+}
+
+/* Agrupando logo + título */
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+/* ===== NAVEGAÇÃO ===== */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+nav a {
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
 }
 
-.download-link:hover,
-.download-link:focus {
-  background-color: #003f7d;
-}
-/* Ajusta o tamanho/estilo dos botões "Baixar guia" nos cards de Tutoriais */
-#tutoriais .card .btn-secondary {
-  font-size: 0.85rem;      /* menor */
-  padding: 6px 10px;       /* compacto */
-  line-height: 1.2;
-  border-width: 1px;       /* borda mais fina */
+nav a:hover {
+  color: #ffdd57; /* Amarelinho destaque */
 }
 
-/* (opcional) aproxima do texto acima */
-#tutoriais .card details {
-  margin-bottom: .5rem;
+/* ===== CONTEÚDO PRINCIPAL ===== */
+main {
+  padding: 20px;
+}
+
+/* ===== RODAPÉ ===== */
+footer {
+  text-align: center;
+  padding: 15px;
+  background: #222;
+  color: #fff;
+  margin-top: 30px;
 }

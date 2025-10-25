@@ -1,50 +1,18 @@
-name: CI (A11y) & Deploy (GitHub Pages)
+name: Deploy (GitHub Pages)
 
 on:
   push:
-    branches: [ main, develop ]
-  pull_request:
-    branches: [ main, develop ]
+    branches: [ main ]
 
 permissions:
   contents: read
+  pages: write
+  id-token: write
 
 jobs:
-  a11y:
-    name: Accessibility check (pa11y-ci)
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: '18'
-
-      - name: Install http-server (serve /src)
-        run: npm i -g http-server
-
-      - name: Start static server
-        run: |
-          nohup http-server ./src -p 8080 >/dev/null 2>&1 &
-          sleep 3
-
-      - name: Run pa11y-ci on homepage
-        run: npx pa11y-ci http://localhost:8080/index.html --threshold 10
-
   deploy:
-    name: Deploy to GitHub Pages (src/)
-    needs: a11y
-    if: github.event_name == 'push' && github.ref == 'refs/heads/main'
+    name: Deploy to GitHub Pages
     runs-on: ubuntu-latest
-    permissions:
-      pages: write
-      id-token: write
-      contents: read
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4

@@ -1,72 +1,125 @@
 /* Reset básico */
-body, h1, h2, h3, p, ul, li, a {
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-/* Fonte geral */
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.6;
-  background: #f9f9f9;
   color: #333;
+  background: #f9f9f9;
 }
 
-/* ===== HEADER ===== */
+/* 🔹 Header */
 header {
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 15px 30px;
-  background-color: #0b5fff; /* Azul do seu tema */
-  color: #fff;
+  align-items: center;
+  background: #0b5fff;
+  padding: 10px 20px;
+  color: white;
 }
 
-header img {
-  height: 60px; /* tamanho do logo */
-  width: auto;
-}
-
-header h1 {
-  font-size: 1.8rem;
-  margin-left: 10px;
-}
-
-/* Agrupando logo + título */
 .header-left {
   display: flex;
   align-items: center;
+  gap: 10px;
 }
 
-/* ===== NAVEGAÇÃO ===== */
+.logo {
+  height: 40px;
+}
+
 nav ul {
   list-style: none;
   display: flex;
   gap: 20px;
 }
 
-nav a {
+nav ul li a {
+  color: white;
   text-decoration: none;
-  color: #fff;
   font-weight: bold;
-  transition: color 0.3s;
 }
 
-nav a:hover {
-  color: #ffdd57; /* Amarelinho destaque */
+nav ul li a:hover {
+  text-decoration: underline;
 }
 
-/* ===== CONTEÚDO PRINCIPAL ===== */
+/* 🔹 Seções */
 main {
   padding: 20px;
 }
 
-/* ===== RODAPÉ ===== */
+h2 {
+  margin: 20px 0 10px;
+  color: #0b5fff;
+}
+
+/* 🔹 Cards */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.card a {
+  display: inline-block;
+  margin-top: 8px;
+  color: #0b5fff;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+.card a:hover {
+  text-decoration: underline;
+}
+
+/* 🔹 Formulário */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 15px;
+}
+
+input, textarea, button {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 1rem;
+}
+
+button {
+  background: #0b5fff;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+button:hover {
+  background: #0946c0;
+}
+
+/* 🔹 Rodapé */
 footer {
+  background: #0b5fff;
+  color: white;
   text-align: center;
   padding: 15px;
-  background: #222;
-  color: #fff;
   margin-top: 30px;
+}
+
+footer .logo-footer {
+  height: 30px;
+  margin-bottom: 8px;
 }

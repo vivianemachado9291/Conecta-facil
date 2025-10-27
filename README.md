@@ -20,17 +20,6 @@ Tutoriais acessíveis para apoiar pessoas idosas (e iniciantes) a usar serviços
 - Formulários com rótulos claros e mensagens de erro acessíveis
 
 
-## 📦 Estrutura de Pastas
-
-├── public/ # favicon e arquivos públicos
-├── src/ # código-fonte principal
-│ ├── css/ # estilos
-│ ├── js/ # scripts
-│ ├── assets/img/ # imagens e logo
-│ └── index.html # página inicial
-├── tests/ # acessibilidade e documentação
-├── .github/workflows # automação de deploy
-
 
 
 ---

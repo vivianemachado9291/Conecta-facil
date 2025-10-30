@@ -1,65 +1,58 @@
-(function () {
-  const $ = (sel) => document.querySelector(sel);
-  const root = document.documentElement;
+// util
+const $ = (sel) => document.querySelector(sel);
 
-  // Persistência
-  const setPref = (k, v) => localStorage.setItem(k, v);
-  const getPref = (k) => localStorage.getItem(k);
+// Ano no footer
+const ano = $('#ano');
+if (ano) ano.textContent = new Date().getFullYear();
 
-  // Ano no rodapé
-  const ano = document.getElementById('ano');
-  if (ano) ano.textContent = new Date().getFullYear();
+// Validação simples do formulário (sem back-end)
+const form = document.querySelector('.contact-form');
+const nome = $('#nome');
+const email = $('#email');
+const mensagem = $('#mensagem');
+const erroNome = $('#erro-nome');
+const erroEmail = $('#erro-email');
+const erroMensagem = $('#erro-mensagem');
+const feedback = $('#form-feedback');
 
-  // Toggles
-  const btnDark = $('#btn-dark');
-  const btnContrast = $('#btn-contrast');
-  const btnFont = $('#btn-font');
+function isEmailOk(v) {
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v);
+}
 
-  // Estados salvos
-  const savedDark = getPref('theme-dark') === 'true';
-  const savedContrast = getPref('theme-contrast') === 'true';
-  const savedFont = getPref('font-large') === 'true';
+if (form) {
+  form.addEventListener('submit', (e) => {
+    // limpa mensagens
+    erroNome.textContent = '';
+    erroEmail.textContent = '';
+    erroMensagem.textContent = '';
+    feedback.textContent = '';
 
-  if (savedDark) { root.classList.add('theme-dark'); btnDark?.setAttribute('aria-pressed', 'true'); }
-  if (savedContrast) { root.classList.add('theme-contrast'); btnContrast?.setAttribute('aria-pressed', 'true'); }
-  if (savedFont) { root.style.setProperty('--font-size', '1.125rem'); btnFont?.setAttribute('aria-pressed', 'true'); }
+    let ok = true;
 
-  btnDark?.addEventListener('click', () => {
-    const on = root.classList.toggle('theme-dark');
-    btnDark.setAttribute('aria-pressed', String(on));
-    setPref('theme-dark', on);
-  });
-
-  btnContrast?.addEventListener('click', () => {
-    const on = root.classList.toggle('theme-contrast');
-    btnContrast.setAttribute('aria-pressed', String(on));
-    setPref('theme-contrast', on);
-  });
-
-  btnFont?.addEventListener('click', () => {
-    const large = btnFont.getAttribute('aria-pressed') !== 'true';
-    root.style.setProperty('--font-size', large ? '1.125rem' : '1rem');
-    btnFont.setAttribute('aria-pressed', String(large));
-    setPref('font-large', large);
-  });
-
-  // Skip-link foca no main
-  const main = document.getElementById('conteudo');
-  document.querySelectorAll('.skip-link').forEach((link) => {
-    link.addEventListener('click', () => main?.focus());
-  });
-
-  // Validação básica de email
-  const form = document.querySelector('form');
-  const email = document.getElementById('email');
-  const emailErro = document.getElementById('email-erro');
-
-  form?.addEventListener('submit', (e) => {
-    emailErro.textContent = '';
-    if (!email?.value || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
-      e.preventDefault();
-      emailErro.textContent = 'Por favor, insira um email válido.';
-      email?.focus();
+    if (!nome.value.trim()) {
+      erroNome.textContent = 'Informe seu nome.';
+      ok = false;
     }
+    if (!email.value.trim() || !isEmailOk(email.value.trim())) {
+      erroEmail.textContent = 'Informe um email válido.';
+      ok = false;
+    }
+    // mensagem é opcional, mas você pode exigir:
+    // if (!mensagem.value.trim()) { erroMensagem.textContent = 'Digite sua mensagem.'; ok = false; }
+
+    if (!ok) {
+      e.preventDefault();
+      // foco no primeiro erro
+      if (erroNome.textContent) nome.focus();
+      else if (erroEmail.textContent) email.focus();
+      else if (erroMensagem.textContent) mensagem.focus();
+      return;
+    }
+
+    // Sem back-end: apenas mostra feedback e impede recarregar
+    e.preventDefault();
+    feedback.textContent = 'Mensagem enviada! (demonstração)';
+    form.reset();
+    nome.focus();
   });
-})();
+}

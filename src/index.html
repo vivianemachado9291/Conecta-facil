@@ -1,77 +1,155 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Conecta Fácil — Inclusão Digital</title>
-  <meta name="description" content="Tutoriais simples e acessíveis para inclusão digital de pessoas idosas.">
-  <meta name="theme-color" content="#0b5fff">
+  <meta name="description" content="Tutoriais simples e acessíveis para inclusão digital de pessoas idosas." />
+  <meta name="theme-color" content="#0b5fff" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Conecta Fácil — Inclusão Digital">
-  <meta property="og:description" content="Tutoriais simples e acessíveis para inclusão digital.">
-  <meta property="og:type" content="website">
+  <meta property="og:title" content="Conecta Fácil — Inclusão Digital" />
+  <meta property="og:description" content="Tutoriais simples e acessíveis para inclusão digital." />
+  <meta property="og:type" content="website" />
 
-  <!-- Favicon -->
-  <link rel="icon" href="../public/favicon.ico">
+  <!-- Favicon (opcional, se tiver) -->
+  <link rel="icon" href="assets/img/favicon.ico" />
 
-  <!-- Estilos -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
+  <!-- Link de pulo para acessibilidade -->
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
 
-  <!-- 🔹 Header com logo e menu -->
-  <header>
-    <div class="header-left">
-    <img src="assets/img/logo.png" alt="Logo Conecta Fácil" class="logo">
-      <h1>Conecta Fácil</h1>
+  <!-- Cabeçalho com logo e menu -->
+  <header class="site-header" role="banner">
+    <div class="container header-inner">
+      <div class="header-left">
+        <img src="assets/img/logo.png" alt="Logo Conecta Fácil" class="logo" />
+        <h1 class="brand">Conecta Fácil</h1>
+      </div>
+      <nav class="site-nav" role="navigation" aria-label="Navegação principal">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#tutoriais">Tutoriais</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
     </div>
-    <nav>
-      <ul>
-        <li><a href="#objetivos">Objetivos</a></li>
-        <li><a href="#tutoriais">Tutoriais</a></li>
-        <li><a href="#contato">Contato</a></li>
-      </ul>
-    </nav>
   </header>
 
-  <!-- 🔹 Conteúdo principal -->
-  <main>
-    <section id="inicio">
-      <h2>Conecta Fácil — Inclusão Digital</h2>
-      <p>Tutoriais acessíveis para apoiar pessoas idosas (e iniciantes) a usar serviços digitais do dia a dia.</p>
-    </section>
-
-    <section id="objetivos">
-      <h2>🎯 Objetivos</h2>
-      <ul>
-        <li>Inclusão digital com linguagem simples</li>
-        <li>Acessibilidade nível WCAG 2.1 AA</li>
-        <li>Deploy em produção com HTTPS</li>
-      </ul>
-    </section>
-
-    <section id="tutoriais">
-      <h2>📚 Tutoriais</h2>
-      <div class="cards">
-        <article class="card">
-          <h3>Enviar mensagem no WhatsApp</h3>
-          <p>Aprenda a abrir o app, escolher um contato e enviar texto, áudio e imagens.</p>
-          <a href="#">Passo a passo</a><br>
-          <a href="#">📥 Baixar guia em PDF</a>
-        </article>
-
-        <article class="card">
-          <h3>Criar conta no gov.br</h3>
-          <p>Veja como criar e validar sua conta para acessar serviços públicos digitais.</p>
-          <a href="#">Passo a passo</a><br>
-          <a href="#">📥 Baixar guia em PDF</a>
-        </article>
-
-        <article class="card">
-          <h3>Agendar consulta online</h3>
-          <p>Como localizar unidade de saúde e realizar agendamentos pelo aplicativo.</p>
-          <a href="#">Passo a passo</a><br>
-          <a href="#">📥 Baixar guia em PDF</a>
-        </article>
+  <main id="conteudo" tabindex="-1">
+    <!-- Seção hero -->
+    <section id="inicio" class="hero">
+      <div class="container">
+        <h2>Inclusão digital na prática</h2>
+        <p>Passo a passo simples para usar WhatsApp, acessar o gov.br, marcar consultas e muito mais.</p>
+        <a class="btn-primary" href="#tutoriais">Ver tutoriais</a>
       </div>
+    </section>
+
+    <!-- Tutoriais -->
+    <section id="tutoriais" class="section" aria-labelledby="titulo-tutoriais">
+      <div class="container">
+        <h2 id="titulo-tutoriais">Tutoriais</h2>
+
+        <div class="cards">
+          <article class="card">
+            <h3>Enviar mensagem no WhatsApp</h3>
+            <p>Aprenda a abrir o app, escolher um contato e enviar texto, áudio e imagens.</p>
+            <details>
+              <summary>Passo a passo</summary>
+              <ol>
+                <li>Abrir o WhatsApp</li>
+                <li>Tocar no ícone de conversa</li>
+                <li>Escolher o contato</li>
+                <li>Escrever e enviar a mensagem</li>
+              </ol>
+            </details>
+            <a class="btn-secondary" href="#" aria-label="Baixar guia em PDF do WhatsApp">📥 Baixar guia (PDF)</a>
+          </article>
+
+          <article class="card">
+            <h3>Criar conta no gov.br</h3>
+            <p>Veja como criar e validar sua conta para acessar serviços públicos digitais.</p>
+            <details>
+              <summary>Passo a passo</summary>
+              <ol>
+                <li>Acesse <strong>gov.br</strong> e clique em Entrar</li>
+                <li>Selecione Criar conta</li>
+                <li>Informe o CPF e valide</li>
+              </ol>
+            </details>
+            <a class="btn-secondary" href="#" aria-label="Baixar guia em PDF do gov.br">📥 Baixar guia (PDF)</a>
+          </article>
+
+          <article class="card">
+            <h3>Agendar consulta online</h3>
+            <p>Como localizar a unidade e realizar agendamentos pelo aplicativo municipal.</p>
+            <details>
+              <summary>Passo a passo</summary>
+              <ol>
+                <li>Abrir o app de saúde</li>
+                <li>Ir em Agendamentos</li>
+                <li>Escolher especialidade, data e horário</li>
+              </ol>
+            </details>
+            <a class="btn-secondary" href="#" aria-label="Baixar guia em PDF de agendamento">📥 Baixar guia (PDF)</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contato -->
+    <section id="contato" class="section" aria-labelledby="titulo-contato">
+      <div class="container">
+        <h2 id="titulo-contato">Contato e sugestões</h2>
+        <p id="ajuda-contato">Campos marcados com * são obrigatórios.</p>
+
+        <form class="contact-form" aria-describedby="ajuda-contato" novalidate>
+          <div class="form-group">
+            <label for="nome">Nome *</label>
+            <input id="nome" name="nome" type="text" required aria-required="true" />
+            <div class="field-error" id="erro-nome" role="alert" aria-live="polite"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="email">Email *</label>
+            <input id="email" name="email" type="email" required aria-required="true" />
+            <div class="field-error" id="erro-email" role="alert" aria-live="polite"></div>
+          </div>
+
+          <div class="form-group">
+            <label for="mensagem">Mensagem</label>
+            <textarea id="mensagem" name="mensagem" rows="4"></textarea>
+            <div class="field-error" id="erro-mensagem" role="alert" aria-live="polite"></div>
+          </div>
+
+          <button class="btn-primary" type="submit">Enviar</button>
+          <p class="form-feedback" id="form-feedback" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <img src="assets/img/logo.png" alt="Logo Conecta Fácil" class="logo-footer" />
+        <p>© <span id="ano"></span> Conecta Fácil — Inclusão Digital</p>
+      </div>
+      <nav aria-label="Links de utilidade">
+        <ul>
+          <li><a href="#inicio">Início</a></li>
+          <li><a href="#tutoriais">Tutoriais</a></li>
+          <li><a href="#contato">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- JS -->
+  <script src="js/script.js"></script>
+</body>
+</html>
